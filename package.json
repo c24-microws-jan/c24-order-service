@@ -1,7 +1,7 @@
 {
-  "name": "hello-world-service",
-  "version": "1.1.0",
-  "description": "This is an example of a node microservice",
+  "name": "c24-order-service",
+  "version": "1.0.0",
+  "description": "Order service",
   "author": "Andreas Helmberger <public@ahelmberger.de>",
   "license": "MIT",
   "main": "index.js",
