@@ -1,5 +1,5 @@
 FROM mhart/alpine-node:4.2.1
-MAINTAINER https://github.com/c24-microws-jan/hello-world-service
+MAINTAINER https://github.com/c24-microws-jan/c24-order-service
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
