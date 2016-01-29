@@ -9,7 +9,7 @@ This is an example of a node.js microservice
 
 * Save a order. Make a POST to the following url
 http://46.101.245.190:32785
-It will return the id of the new orde.
+It will return the id of the new order.
 * Get the data of one order. Make a GET to the url:
 http://46.101.245.190:32785/:id
 * Get all Ids of orders. Make a GET to the url:
