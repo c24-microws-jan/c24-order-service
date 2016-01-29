@@ -34,25 +34,35 @@ app.get(SERVICE_CHECK_HTTP, function (req, res) {
 
 // Add all other service routes
 app.get('/', function (req, res) {
-  console.log('GET /');
   console.log('Calling Couch!');
   // res.send('Hello World');
   client.get('/order/_all_docs', function(err, rs) {
     console.log('Error: ', err);
-    console.log('Response: ', rs);
-    res.send(rs);
+    res.send(rs.body);
+  });
+});
+
+app.get('/:id', function (req, res) {
+  var id = req.params.id;
+  console.log('GET ', req.params.id);
+  console.log('Calling Couch!');
+  client.get('/order/' + id , function(err, rs) {
+    if (err) {
+      console.log('Error: ', err);
+    }
+    res.send(rs.body);
   });
 });
 
 app.post('/', function (req, res) {
-  client.post('/order/', req.body, function(error, rs)) {
+  client.post( { path: '/order/', data: req.body }, function(error, rs) {
     if (error) {
       console.log('Error:', error);
       res.status(500).end();
-    })
-    res.status(201).end();
-  };
-  // console.log('POST /', JSON.stringify(req.body));
+    }
+    console.log('rs', rs);
+    res.status(201).send(rs.body.id);
+    });
 });
 
 // Start the server
