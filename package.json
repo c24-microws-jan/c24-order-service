@@ -1,0 +1,33 @@
+{
+  "name": "hello-world-service",
+  "version": "1.1.0",
+  "description": "This is an example of a node microservice",
+  "author": "Andreas Helmberger <public@ahelmberger.de>",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/c24-microws-jan/hello-world-service.git"
+  },
+  "keywords": [
+    "microservice",
+    "nodejs",
+    "example"
+  ],
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "body-parser": "~1.14.2",
+    "cors": "~2.7.1",
+    "express": "~4.13.4"
+  },
+  "devDependencies": {
+    "gulp": "~3.9.0",
+    "gulp-live-server": "~0.0.29",
+    "gulp-shell": "~0.5.2",
+    "minimist": "~1.2.0",
+    "run-sequence": "~1.1.5",
+    "tiny-shipyard-client": "~1.1.0"
+  }
+}
