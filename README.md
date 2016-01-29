@@ -5,6 +5,16 @@
 
 This is an example of a node.js microservice
 
+## How to use it
+
+* Save a order. Make a POST to the following url
+http://46.101.245.190:32785
+It will return the id of the new orde.
+* Get the data of one order. Make a GET to the url:
+http://46.101.245.190:32785/:id
+* Get all Ids of orders. Make a GET to the url:
+http://46.101.245.190:32785
+
 ## Run it on your local node.js installation
 
 * Run `npm install` inside the root folder to restore all packages
