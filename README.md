@@ -1,7 +1,7 @@
 # Order service
 
 [![Build Status](https://travis-ci.org/c24-microws-jan/c24-order-service.svg)](https://travis-ci.org/c24-microws-jan/c24-order-service)
-[![Dependencies](https://david-dm.org/c24-microws-jan/hello-world-service.svg)](https://david-dm.org/badges/shields)
+[![Dependencies](https://david-dm.org/c24-microws-jan/c24-order-service.svg)](https://david-dm.org/badges/shields)
 
 This is an example of a node.js microservice
 
