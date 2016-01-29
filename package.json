@@ -20,7 +20,8 @@
   "dependencies": {
     "body-parser": "~1.14.2",
     "cors": "~2.7.1",
-    "express": "~4.13.4"
+    "express": "~4.13.4",
+    "resilient-consul": "^0.1.6"
   },
   "devDependencies": {
     "gulp": "~3.9.0",

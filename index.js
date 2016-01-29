@@ -1,11 +1,22 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const Resilient = require('resilient');
+const consul = require('resilient-consul');
 
 // Define some default values if not set in environment
 const PORT = process.env.PORT || 3000;
 const SHUTDOWN_TIMEOUT = process.env.SHUTDOWN_TIMEOUT || 10000;
 const SERVICE_CHECK_HTTP = process.env.SERVICE_CHECK_HTTP || '/healthcheck';
+
+// Init resilient
+var client = Resilient();
+
+client.use(consul({
+  service: 'c24-order-couchdb',
+  servers: ['http://46.101.245.190:8500'],
+  onlyHealthy: true,
+}));
 
 // Create a new express app
 const app = express();
@@ -24,7 +35,13 @@ app.get(SERVICE_CHECK_HTTP, function (req, res) {
 // Add all other service routes
 app.get('/', function (req, res) {
   console.log('GET /');
-  res.send('Hello World');
+  console.log('Calling Couch!');
+  // res.send('Hello World');
+  client.get('/order/_all_docs', function(err, rs) {
+    console.log('Error: ', err);
+    console.log('Response: ', rs);
+    res.send(rs);
+  });
 });
 
 app.post('/', function (req, res) {
