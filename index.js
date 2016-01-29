@@ -50,7 +50,7 @@ app.get('/:id', function (req, res) {
     if (err) {
       console.log('Error: ', err);
     }
-    res.send(rs.body);
+    res.send(rs.body.rows);
   });
 });
 
