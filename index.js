@@ -28,7 +28,8 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function (req, res) {
-  console.log('POST /', JSON.stringify(req.body));
+  console.log('reeeeeeeequest', req.body);
+  // console.log('POST /', JSON.stringify(req.body));
   res.status(201).end();
 });
 
