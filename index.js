@@ -14,7 +14,7 @@ var client = Resilient();
 
 client.use(consul({
   service: 'c24-order-couchdb',
-  servers: ['http://46.101.245.190:8500'],
+  servers: ['http://46.101.245.190:8500', 'http://46.101.132.55:8500', 'http://46.101.193.82:8500'],
   onlyHealthy: true,
 }));
 
