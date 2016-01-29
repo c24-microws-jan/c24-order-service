@@ -34,8 +34,6 @@ app.get(SERVICE_CHECK_HTTP, function (req, res) {
 
 // Add all other service routes
 app.get('/', function (req, res) {
-  console.log('Calling Couch!');
-  // res.send('Hello World');
   client.get('/order/_all_docs', function(err, rs) {
     console.log('Error: ', err);
     res.send(rs.body);
@@ -44,8 +42,6 @@ app.get('/', function (req, res) {
 
 app.get('/:id', function (req, res) {
   var id = req.params.id;
-  console.log('GET ', req.params.id);
-  console.log('Calling Couch!');
   client.get('/order/' + id , function(err, rs) {
     if (err) {
       console.log('Error: ', err);
