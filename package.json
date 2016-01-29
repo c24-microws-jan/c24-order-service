@@ -21,6 +21,7 @@
     "body-parser": "~1.14.2",
     "cors": "~2.7.1",
     "express": "~4.13.4",
+    "resilient": "^0.3.3",
     "resilient-consul": "^0.1.6"
   },
   "devDependencies": {
