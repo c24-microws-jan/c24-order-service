@@ -45,9 +45,14 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function (req, res) {
-  console.log('reeeeeeeequest', req.body);
+  client.post('/order/', req.body, function(error, rs)) {
+    if (error) {
+      console.log('Error:', error);
+      res.status(500).end();
+    })
+    res.status(201).end();
+  };
   // console.log('POST /', JSON.stringify(req.body));
-  res.status(201).end();
 });
 
 // Start the server
