@@ -36,7 +36,7 @@ app.get(SERVICE_CHECK_HTTP, function (req, res) {
 app.get('/', function (req, res) {
   client.get('/order/_all_docs', function(err, rs) {
     console.log('Error: ', err);
-    res.json(rs.body);
+    res.json(rs.body.rows);
   });
 });
 
@@ -46,7 +46,7 @@ app.get('/:id', function (req, res) {
     if (err) {
       console.log('Error: ', err);
     }
-    res.json(rs.body.rows);
+    res.json(rs.body);
   });
 });
 
