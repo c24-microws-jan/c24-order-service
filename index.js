@@ -55,12 +55,16 @@ app.get('/:id', function (req, res) {
 });
 
 app.post('/', function (req, res) {
+  console.log('Boooooooody', req.body);
+  if (Object.keys(req.body).length === 0) {
+    res.status(400).end();
+    return;
+  }
   client.post( { path: '/order/', data: req.body }, function(error, rs) {
     if (error) {
       console.log('Error:', error);
       res.status(500).end();
     }
-    console.log('rs', rs);
     res.status(201).send(rs.body.id);
     });
 });
