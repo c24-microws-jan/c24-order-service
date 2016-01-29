@@ -36,7 +36,7 @@ app.get(SERVICE_CHECK_HTTP, function (req, res) {
 app.get('/', function (req, res) {
   client.get('/order/_all_docs', function(err, rs) {
     console.log('Error: ', err);
-    res.send(rs.body);
+    res.json(rs.body);
   });
 });
 
@@ -46,7 +46,7 @@ app.get('/:id', function (req, res) {
     if (err) {
       console.log('Error: ', err);
     }
-    res.send(rs.body.rows);
+    res.json(rs.body.rows);
   });
 });
 
@@ -61,7 +61,7 @@ app.post('/', function (req, res) {
       console.log('Error:', error);
       res.status(500).end();
     }
-    res.status(201).send(rs.body.id);
+    res.status(201).json(rs.body.id);
     });
 });
 
