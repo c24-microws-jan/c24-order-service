@@ -38,4 +38,5 @@ docker run -it -p 3000:3000 hello-world-service
 ~~~ sh
 docker tag hello-world-service 46.101.193.82:5000/hello-world-service:1.0.0
 docker push 46.101.193.82:5000/hello-world-service:1.0.0
+
 ~~~
